@@ -11,8 +11,14 @@ object MyModule {
     fib_rec(n, 0, 1)
   }
 
+  private def formatResult(name: String, n: Int, f: Int => Int) = {
+    val msg = "%s(%d) = %d"
+    val result = f(n)
+    println(msg.format(name, n, result))
+  }
+
   def main(args: Array[String]): Unit = {
-    println(fib(5))
+    formatResult("Fibonacci", 4, fib)
   }
 
 }
